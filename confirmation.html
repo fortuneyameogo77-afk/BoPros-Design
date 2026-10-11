@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b83">
+  <title>Demande envoyée | BoPros Design</title>
+
+  <style>
+    :root {
+      --blue: #123b83;
+      --red: #e63946;
+      --light: #f4f7fc;
+      --text: #20283a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+    }
+
+    header {
+      padding: 20px 6%;
+      background: white;
+      border-bottom: 3px solid var(--red);
+    }
+
+    .brand {
+      color: var(--blue);
+      font-size: 24px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 40px 18px;
+    }
+
+    .confirmation {
+      width: 100%;
+      max-width: 600px;
+      padding: 40px 25px;
+      background: white;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(18, 59, 131, 0.09);
+    }
+
+    .check {
+      width: 76px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: #e7f7ed;
+      color: #16803c;
+      font-size: 42px;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      color: var(--blue);
+      font-size: clamp(27px, 5vw, 36px);
+    }
+
+    p {
+      color: #606b7d;
+      line-height: 1.7;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      background: var(--red);
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid var(--blue);
+      color: var(--blue);
+    }
+
+    footer {
+      padding: 22px 15px;
+      text-align: center;
+      color: #687386;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="brand">
+      BoPros <span>Design</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="confirmation">
+      <div class="check" aria-hidden="true">✓</div>
+
+      <h1>Merci pour votre confiance !</h1>
+
+      <p>
+        Votre demande a été envoyée avec succès.
+        Nous allons examiner votre projet et vous contacter
+        pour discuter des détails et de votre devis.
+      </p>
+
+      <p>
+        Merci d'avoir choisi BoPros Design pour donner vie
+        à vos idées.
+      </p>
+
+      <div class="buttons">
+        <a href="index.html" class="button primary">
+          Retour à l'accueil
+        </a>
+
+        <a href="commande.html" class="button secondary">
+          Nouvelle commande
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 BoPros Design — Design sur mesure, travail professionnel.
+  </footer>
+</body>
+</html>
