@@ -57,15 +57,11 @@ a {
 }
 
 .brand-icon {
-  display: grid;
-  place-items: center;
   width: 43px;
   height: 43px;
+  object-fit: contain;
   border-radius: 50%;
-  background: var(--blue);
-  color: white;
   border: 3px solid var(--red);
-  font-size: 24px;
 }
 
 .red {
@@ -208,16 +204,11 @@ a {
   letter-spacing: 2px;
 }
 
-.art-circle {
-  width: 95px;
-  height: 95px;
+.art-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   border-radius: 50%;
-  border: 5px solid var(--red);
-  display: grid;
-  place-items: center;
-  margin: 24px auto 15px;
-  font-size: 48px;
-  font-weight: 900;
 }
 
 .card-one h2 {
