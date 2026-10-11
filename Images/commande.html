@@ -1,0 +1,533 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="icon" type="image/jpeg" href="images/mon-logo.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b83">
+  <title>Commander une création | BoPros Design</title>
+
+  <style>
+    :root {
+      --blue: #123b83;
+      --red: #e63946;
+      --light: #f4f7fc;
+      --text: #20283a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      border-bottom: 3px solid var(--red);
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      color: var(--blue);
+      font-size: 23px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .back-link {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 18px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .intro h1 {
+      color: var(--blue);
+      font-size: clamp(27px, 5vw, 38px);
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: #606b7d;
+      margin: 0;
+    }
+
+    form {
+      background: white;
+      padding: clamp(20px, 5vw, 38px);
+      border-radius: 16px;
+      box-shadow: 0 10px 35px rgba(18, 59, 131, 0.08);
+    }
+
+    .form-section {
+      margin-bottom: 28px;
+    }
+
+    .form-section h2 {
+      color: var(--blue);
+      font-size: 19px;
+      margin: 0 0 18px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid #e6eaf1;
+    }
+
+    .fields {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccd4e1;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 15px;
+      background: white;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #b8ccf7;
+      border-color: var(--blue);
+    }
+
+    textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .hint {
+      color: #687386;
+      font-size: 12px;
+    }
+
+    .service-fields {
+      display: none;
+    }
+
+    .service-fields.active {
+      display: block;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 15px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--red);
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .submit-button:hover {
+      background: #c92635;
+      transform: translateY(-2px);
+    }
+
+    .notice {
+      background: #fff4e5;
+      border-left: 4px solid #e9a23b;
+      padding: 12px 14px;
+      border-radius: 5px;
+      color: #664b20;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #687386;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 18px;
+      }
+
+      .brand {
+        font-size: 20px;
+      }
+
+      main {
+        margin-top: 25px;
+      }
+
+      .fields {
+        grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: auto;
+      }
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="brand">BoPros <span>Design</span></a>
+    <a href="index.html" class="back-link">← Retour à l'accueil</a>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h1>Parlons de votre projet</h1>
+      <p>Décrivez votre besoin pour recevoir une proposition adaptée.</p>
+    </div>
+
+    
+<form id="orderForm" action="https://formsubmit.co/boprosdesign1@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="Nouvelle demande - BoPros Design">
+  <input type="hidden" name="_template" value="table">
+
+  <input type="hidden" name="_next" value="https://fortuneyameogo77-afk.github.io/BoPros-Design/confirmation.html">
+
+      <div class="form-section">
+        <h2>1. Votre service</h2>
+
+        <div class="field">
+          <label for="service">Quelle création souhaitez-vous ? *</label>
+          <select id="service" name="service" required>
+            <option value="logo">Création de logo</option>
+            <option value="affiche">Affiche publicitaire</option>
+            <option value="flyer">Flyer</option>
+            <option value="carte">Carte de visite</option>
+            <option value="autre">Autre création graphique</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>2. Vos coordonnées</h2>
+
+        <div class="fields">
+          <div class="field">
+            <label for="clientName">Nom complet *</label>
+            <input id="clientName" name="clientName" required
+                   autocomplete="name" placeholder="Votre nom">
+          </div>
+
+          <div class="field">
+            <label for="clientEmail">Adresse e-mail *</label>
+            <input id="clientEmail" name="clientEmail" type="email"
+                   required autocomplete="email"
+                   placeholder="vous@exemple.com">
+          </div>
+
+          <div class="field full">
+            <label for="clientPhone">Téléphone</label>
+            <input id="clientPhone" name="clientPhone" type="tel"
+                   autocomplete="tel" placeholder="+226 ...">
+          </div>
+        </div>
+      </div>
+
+      <div id="logoFields" class="service-fields active form-section">
+        <h2>3. Votre projet de logo</h2>
+
+        <div class="fields">
+          <div class="field">
+            <label for="brandName">Nom de la marque *</label>
+            <input id="brandName" name="brandName"
+                   data-required="true" placeholder="Nom à afficher">
+          </div>
+
+          <div class="field">
+            <label for="brandActivity">Domaine d'activité *</label>
+            <input id="brandActivity" name="brandActivity"
+                   data-required="true"
+                   placeholder="Ex. : restaurant, mode, technologie">
+          </div>
+
+          <div class="field">
+            <label for="logoStyle">Style souhaité</label>
+            <select id="logoStyle" name="logoStyle">
+              <option>Moderne et minimaliste</option>
+              <option>Élégant et professionnel</option>
+              <option>Créatif et original</option>
+              <option>Luxe</option>
+              <option>Je laisse le designer choisir</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="logoColors">Couleurs souhaitées</label>
+            <input id="logoColors" name="logoColors"
+                   placeholder="Ex. : bleu et blanc">
+          </div>
+
+          <div class="field full">
+            <label for="logoDescription">Décrivez votre idée *</label>
+            <textarea id="logoDescription" name="logoDescription"
+                      data-required="true"
+                      placeholder="Votre idée, les symboles souhaités, ce que le logo doit représenter..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div id="afficheFields" class="service-fields form-section">
+        <h2>3. Votre affiche publicitaire</h2>
+
+        <div class="fields">
+          <div class="field">
+            <label for="afficheSubject">Sujet de l'affiche *</label>
+            <input id="afficheSubject" name="afficheSubject"
+                   data-required="true"
+                   placeholder="Ex. : lancement, concert, promotion">
+          </div>
+
+          <div class="field">
+            <label for="afficheFormat">Format souhaité</label>
+            <select id="afficheFormat" name="afficheFormat">
+              <option>A4</option>
+              <option>A3</option>
+              <option>Format réseaux sociaux</option>
+              <option>Grand format</option>
+              <option>À conseiller</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="afficheDate">Date de l'événement</label>
+            <input id="afficheDate" name="afficheDate"
+                   placeholder="Si applicable">
+          </div>
+
+          <div class="field">
+            <label for="afficheColors">Couleurs souhaitées</label>
+            <input id="afficheColors" name="afficheColors"
+                   placeholder="Couleurs préférées">
+          </div>
+
+          <div class="field full">
+            <label for="afficheText">Textes et informations à afficher *</label>
+            <textarea id="afficheText" name="afficheText"
+                      data-required="true"
+                      placeholder="Titre, prix, lieu, contacts, offre, etc."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div id="flyerFields" class="service-fields form-section">
+        <h2>3. Votre flyer</h2>
+
+        <div class="fields">
+          <div class="field">
+            <label for="flyerPurpose">Objectif du flyer *</label>
+            <input id="flyerPurpose" name="flyerPurpose"
+                   data-required="true"
+                   placeholder="Ex. : présenter vos services">
+          </div>
+
+          <div class="field">
+            <label for="flyerFormat">Format souhaité</label>
+            <select id="flyerFormat" name="flyerFormat">
+              <option>A5</option>
+              <option>A4</option>
+              <option>Format carré</option>
+              <option>Format numérique</option>
+              <option>À conseiller</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="flyerText">Texte et informations à intégrer *</label>
+            <textarea id="flyerText" name="flyerText"
+                      data-required="true"
+                      placeholder="Présentez les textes, prix, contacts et informations importantes."></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="flyerStyle">Style souhaité</label>
+            <input id="flyerStyle" name="flyerStyle"
+                   placeholder="Ex. : moderne, sobre, coloré">
+          </div>
+        </div>
+      </div>
+
+      <div id="carteFields" class="service-fields form-section">
+        <h2>3. Votre carte de visite</h2>
+
+        <div class="fields">
+          <div class="field">
+            <label for="cardName">Nom à afficher *</label>
+            <input id="cardName" name="cardName"
+                   data-required="true" placeholder="Nom et prénom">
+          </div>
+
+          <div class="field">
+            <label for="cardPosition">Fonction</label>
+            <input id="cardPosition" name="cardPosition"
+                   placeholder="Ex. : directeur, commerçant">
+          </div>
+
+          <div class="field">
+            <label for="cardPhone">Téléphone à afficher *</label>
+            <input id="cardPhone" name="cardPhone"
+                   data-required="true" placeholder="Numéro professionnel">
+          </div>
+
+          <div class="field">
+            <label for="cardEmail">E-mail à afficher</label>
+            <input id="cardEmail" name="cardEmail" type="email"
+                   placeholder="Adresse professionnelle">
+          </div>
+
+          <div class="field full">
+            <label for="cardOther">Autres informations</label>
+            <textarea id="cardOther" name="cardOther"
+                      placeholder="Adresse, réseaux sociaux, slogan, couleurs..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div id="autreFields" class="service-fields form-section">
+        <h2>3. Votre autre création</h2>
+
+        <div class="field">
+          <label for="otherType">Type de création *</label>
+          <input id="otherType" name="otherType"
+                 data-required="true"
+                 placeholder="Ex. : bannière, invitation, couverture">
+        </div>
+
+        <div class="field" style="margin-top: 17px;">
+          <label for="otherDescription">Décrivez votre besoin *</label>
+          <textarea id="otherDescription" name="otherDescription"
+                    data-required="true"
+                    placeholder="Expliquez ce que vous souhaitez obtenir."></textarea>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>4. Budget et délai</h2>
+
+        <div class="fields">
+          <div class="field">
+            <label for="budget">Budget indicatif (FCFA)</label>
+            <select id="budget" name="budget">
+              <option value="">Je souhaite un devis</option>
+              <option>Moins de 5 000 FCFA</option>
+              <option>5 000 à 10 000 FCFA</option>
+              <option>10 000 à 25 000 FCFA</option>
+              <option>25 000 à 50 000 FCFA</option>
+              <option>Plus de 50 000 FCFA</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="deadline">Délai souhaité</label>
+            <input id="deadline" name="deadline" type="date">
+          </div>
+
+          <div class="field full">
+            <label for="references">Références ou précisions supplémentaires</label>
+            <textarea id="references" name="references"
+                      placeholder="Ajoutez toute information utile à votre demande."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="notice">
+        Vérifiez vos informations avant l'envoi. Votre demande servira à préparer
+        un échange et un devis ; elle ne confirme pas encore une commande.
+      </div>
+
+      <button type="submit" class="submit-button">
+        Envoyer ma demande
+      </button>
+
+      <p id="formMessage" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer>
+    © 2026 BoPros Design — Design sur mesure, travail professionnel.
+  </footer>
+
+  <script>
+    const serviceSelect = document.getElementById("service");
+    const serviceSections = document.querySelectorAll(".service-fields");
+    const orderForm = document.getElementById("orderForm");
+    const formMessage = document.getElementById("formMessage");
+
+    function updateServiceFields() {
+      const selected = serviceSelect.value;
+
+      serviceSections.forEach((section) => {
+        const active = section.id === selected + "Fields";
+
+        section.classList.toggle("active", active);
+
+        section.querySelectorAll("input, select, textarea").forEach((field) => {
+          field.disabled = !active;
+          field.required = active && field.dataset.required === "true";
+        });
+      });
+    }
+
+    serviceSelect.addEventListener("change", updateServiceFields);
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedService = params.get("service");
+
+    if (["logo", "affiche", "flyer", "carte", "autre"].includes(requestedService)) {
+      serviceSelect.value = requestedService;
+    }
+
+    updateServiceFields();
+
+   
+  </script>
+
+</body>
+</html>
