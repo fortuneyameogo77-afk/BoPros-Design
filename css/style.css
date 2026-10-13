@@ -56,16 +56,17 @@ a {
   white-space: nowrap;
 }
 
+
 .brand-icon {
-  display: grid;
-  place-items: center;
-  width: 43px;
-  height: 43px;
-  border-radius: 50%;
-  background: var(--blue);
-  color: white;
-  border: 3px solid var(--red);
-  font-size: 24px;
+  display: block;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
 }
 
 .red {
@@ -499,7 +500,7 @@ a {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: var(--blue);
+  background: var(--white);
   border: 8px solid #e8edfa;
   outline: 3px solid var(--red);
   color: white;

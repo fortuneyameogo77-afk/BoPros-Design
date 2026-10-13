@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoPros AI - Assistant intelligent</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="chat-app">
+    <header class="chat-header">
+      <div class="brand">
+        <div class="brand-logo">BP</div>
+        <div>
+          <h1>BoPros AI</h1>
+          <p>Assistant de BoPros Design</p>
+        </div>
+      </div>
+      <span class="status"><span></span> En ligne</span>
+    </header>
+
+    <section class="messages" id="messages" aria-live="polite">
+      <div class="message assistant">
+        <div class="avatar">BP</div>
+        <div class="bubble">
+          <strong>Bonjour et bienvenue ! 👋</strong>
+          <p>Je suis BoPros AI, ton assistant pour les créations graphiques.</p>
+          <p>Comment puis-je t'aider aujourd'hui ?</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="suggestions">
+      <button type="button" data-question="Quels sont vos services ?">Nos services</button>
+      <button type="button" data-question="Comment passer une commande ?">Commander</button>
+      <button type="button" data-question="Comment vous contacter ?">Contact</button>
+    </div>
+
+    <form class="chat-form" id="chatForm">
+      <input
+        id="userInput"
+        type="text"
+        placeholder="Écris ton message..."
+        autocomplete="off"
+        aria-label="Ton message"
+        required
+      >
+      <button type="submit" aria-label="Envoyer le message">➤</button>
+    </form>
+
+    <footer>BoPros Design · Créativité et professionnalisme</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
