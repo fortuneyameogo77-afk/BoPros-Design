@@ -858,3 +858,138 @@ img {
     padding-right: 16px;
   }
 }
+
+/* ===== BoPros AI ===== */
+
+.bopros-ai-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 90px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 10px 10px;
+  border: none;
+  border-radius: 40px;
+  background: #174ea6;
+  color: white;
+  box-shadow: 0 5px 20px #17203335;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ai-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  color: #174ea6;
+  border-bottom: 3px solid #e63946;
+}
+
+.ai-label {
+  font-size: 14px;
+}
+
+.bopros-ai-toggle:hover {
+  background: #102f68;
+}
+
+.bopros-ai-window {
+  position: fixed;
+  right: 24px;
+  bottom: 155px;
+  z-index: 1001;
+  width: 370px;
+  height: 540px;
+  max-height: calc(100vh - 180px);
+  overflow: hidden;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 10px 40px #17203340;
+}
+
+.bopros-ai-window[hidden] {
+  display: none;
+}
+
+.bopros-ai-window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: #174ea6;
+  color: white;
+}
+
+.bopros-ai-window-header p {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #dce7ff;
+}
+
+.bopros-ai-window-header button {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.bopros-ai-window iframe {
+  display: block;
+  width: 100%;
+  height: calc(100% - 65px);
+  border: none;
+}
+
+@media (max-width: 480px) {
+ 
+.bopros-ai-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 90px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 10px 10px;
+  border: none;
+  border-radius: 40px;
+  background: #174ea6;
+  color: white;
+  box-shadow: 0 5px 20px #17203335;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ai-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  color: #174ea6;
+  border-bottom: 3px solid #e63946;
+}
+
+.ai-label {
+  font-size: 14px;
+}
+
+.bopros-ai-toggle:hover {
+  background: #102f68;
+}
+
+
+  .bopros-ai-window {
+    right: 10px;
+    bottom: 135px;
+    width: calc(100% - 20px);
+    height: min(540px, calc(100vh - 155px));
+  }
+}
