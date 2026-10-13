@@ -106,9 +106,9 @@
     </section>
     
 
-<<<<<<< HEAD
+
    <section class="section portfolio" id="portfolio">
-=======
+
       <div class="portfolio-grid">
         <article class="portfolio-item">
           <img src="Images/logo-1.png" alt="Création de logo par BoPros Design" class="portfolio-image">
@@ -140,7 +140,7 @@
         pour réaliser vos propres supports graphiques.
       </p>
     </section>
->>>>>>> 9c9c875 (Mise a jour du logo et du fond)
+
 
     <section class="about" id="apropos">
       
@@ -191,10 +191,55 @@
     <p>© <span id="year"></span> BoPros Design. Tous droits réservés.</p>
   </footer>
 
+ 
   <a class="whatsapp-float"
      href="https://wa.me/22665153396"
      target="_blank" rel="noopener noreferrer"
      aria-label="Contacter BoPros Design sur WhatsApp">WA</a>
+
+
+  <button class="bopros-ai-toggle" id="bopros-ai-toggle"
+          type="button" aria-label="Ouvrir BoPros AI"
+          aria-expanded="false">
+    <span class="ai-icon">BP</span>
+    <span class="ai-label">BoPros AI</span>
+  </button>
+
+  
+  <div class="bopros-ai-window" id="bopros-ai-window" hidden>
+    <div class="bopros-ai-window-header">
+      <div>
+        <strong>BoPros AI</strong>
+        <p>Assistant de BoPros Design</p>
+      </div>
+      <button type="button" id="bopros-ai-close"
+              aria-label="Fermer BoPros AI">×</button>
+    </div>
+
+    <iframe
+      src="assistant/index.html"
+      title="Assistant intelligent BoPros AI">
+    </iframe>
+  </div>
+
+  <script>
+    const aiToggle = document.getElementById("bopros-ai-toggle");
+    const aiWindow = document.getElementById("bopros-ai-window");
+    const aiClose = document.getElementById("bopros-ai-close");
+
+    function toggleBoProsAI(show) {
+      aiWindow.hidden = !show;
+      aiToggle.setAttribute("aria-expanded", String(show));
+    }
+
+    aiToggle.addEventListener("click", () => {
+      toggleBoProsAI(aiWindow.hidden);
+    });
+
+    aiClose.addEventListener("click", () => {
+      toggleBoProsAI(false);
+    });
+  </script>
 
 </body>
 </html>
