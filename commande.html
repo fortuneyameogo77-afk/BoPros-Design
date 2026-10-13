@@ -9,6 +9,102 @@
   <title>Commander une création | BoPros Design</title>
 
   <style>
+    
+    /* BoPros AI : bouton flottant */
+    .bopros-ai-toggle {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 17px;
+      border: 0;
+      border-radius: 30px;
+      background: #123b83;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.22);
+    }
+
+    .bopros-ai-toggle:hover {
+      background: #0d2d65;
+    }
+
+    .ai-icon {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #e63946;
+      color: white;
+    }
+
+    .bopros-ai-window {
+      position: fixed;
+      right: 22px;
+      bottom: 88px;
+      z-index: 999;
+      width: min(380px, calc(100vw - 28px));
+      height: min(550px, calc(100dvh - 120px));
+      overflow: hidden;
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .bopros-ai-window[hidden] {
+      display: none;
+    }
+
+    .bopros-ai-window-header {
+      height: 65px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #123b83;
+      color: white;
+    }
+
+    .bopros-ai-window-header p {
+      margin: 0;
+      font-size: 12px;
+      color: #e5eaf5;
+    }
+
+    #bopros-ai-close {
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .bopros-ai-window iframe {
+      display: block;
+      width: 100%;
+      height: calc(100% - 65px);
+      border: 0;
+      background: white;
+    }
+
+    @media (max-width: 600px) {
+      .bopros-ai-toggle {
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .bopros-ai-window {
+        right: 14px;
+        bottom: 78px;
+      }
+    }
+
     :root {
       --blue: #123b83;
       --red: #e63946;
@@ -494,6 +590,29 @@
     © 2026 BoPros Design — Design sur mesure, travail professionnel.
   </footer>
 
+  <button class="bopros-ai-toggle" id="bopros-ai-toggle"
+          type="button" aria-label="Ouvrir BoPros AI"
+          aria-expanded="false">
+    <span class="ai-icon">BP</span>
+    <span class="ai-label">BoPros AI</span>
+  </button>
+
+  <div class="bopros-ai-window" id="bopros-ai-window" hidden>
+    <div class="bopros-ai-window-header">
+      <div>
+        <strong>BoPros AI</strong>
+        <p>Assistant de BoPros Design</p>
+      </div>
+      <button type="button" id="bopros-ai-close"
+              aria-label="Fermer BoPros AI">×</button>
+    </div>
+
+    <iframe
+      src="assistant/index.html"
+      title="Assistant intelligent BoPros AI">
+    </iframe>
+  </div>
+
   <script>
     const serviceSelect = document.getElementById("service");
     const serviceSections = document.querySelectorAll(".service-fields");
@@ -527,6 +646,25 @@
     updateServiceFields();
 
    
+  </script>
+
+  <script>
+    const aiToggle = document.getElementById("bopros-ai-toggle");
+    const aiWindow = document.getElementById("bopros-ai-window");
+    const aiClose = document.getElementById("bopros-ai-close");
+
+    function toggleBoProsAI(show) {
+      aiWindow.hidden = !show;
+      aiToggle.setAttribute("aria-expanded", String(show));
+    }
+
+    aiToggle.addEventListener("click", () => {
+      toggleBoProsAI(aiWindow.hidden);
+    });
+
+    aiClose.addEventListener("click", () => {
+      toggleBoProsAI(false);
+    });
   </script>
 
 </body>
